@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>动画暂停</title>
+<style type="text/css">
+	div {
+		margin: 10px;
+	}
+	.change {
+		width: 100px;
+		height: 100px;
+		background-color: #ff6000;
+		animation: fun 5s 2 alternate;
+		-webkit-animation: fun 5s 2 alternate;
+		-moz-animation: fun 5s 2 alternate;
+		-o-animation: fun 5s 2 alternate;
+	}
+
+	@keyframes fun {
+		0% {
+			width: 100px;
+		}
+		25% {
+			width: 200px;
+		}
+		50% {
+			width: 300px;
+		}
+		100% {
+			width: 400px;
+		}
+	}
+	-webkit-@keyframes fun {
+		0% {
+			width: 100px;
+		}
+		25% {
+			width: 200px;
+		}
+		50% {
+			width: 300px;
+		}
+		100% {
+			width: 400px;
+		}
+	}
+	-moz-@keyframes fun {
+		0% {
+			width: 100px;
+		}
+		25% {
+			width: 200px;
+		}
+		50% {
+			width: 300px;
+		}
+		100% {
+			width: 400px;
+		}
+	}
+	-o-@keyframes fun {
+		0% {
+			width: 100px;
+		}
+		25% {
+			width: 200px;
+		}
+		50% {
+			width: 300px;
+		}
+		100% {
+			width: 400px;
+		}
+	}
+</style>
+<script type="text/javascript">
+	function demo(dom){
+		var Svalue = dom.value;
+		var obj = document.getElementById("box");
+		obj.style.animationPlayState = Svalue;
+		obj.style.WebkitAnimationPlayState = Svalue;
+		obj.style.MozAnimationPlayState = Svalue;
+		obj.style.OAnimationPlayState = Svalue;
+	}
+</script>
+</head>
+<body>
+	<div>
+		<input type="radio" name="animate" onclick="demo(this)" value="running">running
+	</div>
+	<div>
+		<input type="radio" name="animate" onclick="demo(this)" value="paused">paused
+	</div>
+
+	<div class="change" id="box"></div>
+</body>
+</html>
